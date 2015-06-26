@@ -13,6 +13,8 @@
 /*.pidb
 /*.booproj
 
+/Assets/UnityVS
+/Assets/UnityVS.meta
 #Unity3D Generated File On Crash Reports
 sysinfo.txt
 
