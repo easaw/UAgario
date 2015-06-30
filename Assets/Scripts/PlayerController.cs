@@ -50,6 +50,7 @@ public class PlayerController : NetworkBehaviour
 
     void Update()
     {
+        if (!isLocalPlayer) return;
         MovePlayer();
         if (Input.GetKeyDown(KeyCode.S)) canMove = !canMove;
     }

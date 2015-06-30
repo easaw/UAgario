@@ -23,7 +23,7 @@ public class PlayerNetworkController : NetworkBehaviour
     [SerializeField]
     private float _lerpRate = 16;
     private Vector3 lastPos, lastSize;
-    private float _threshold = 0.5f;
+    private float _positionChangeTreshold = 0.1f;
 
     PlayerController _pController;
 
@@ -111,7 +111,7 @@ public class PlayerNetworkController : NetworkBehaviour
     [ClientCallback]
     void TransmitPosition()
     {
-        if (isLocalPlayer && Vector3.Distance(_playerTransform.position, lastPos) > _threshold)
+        if (isLocalPlayer && Vector3.Distance(_playerTransform.position, lastPos) > _positionChangeTreshold)
         {
             CmdProvidePositionToServer(_playerTransform.position);
             lastPos = _playerTransform.position;
